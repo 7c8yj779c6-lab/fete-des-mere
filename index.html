@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonne Fête des Mères 🌸</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- PAGE PRINCIPALE -->
+<div id="page-principale">
+
+<div id="contenu-principal">
+<img src="rose.png" alt="Rose" id="rose-img">
+<h1 id="titre">Bonne fête des Mères</h1>
+<button id="btn-lire" onclick="ouvrirPoeme()">Lire la suite</button>
+</div>
+
+</div>
+
+<!-- FENÊTRE POÈME -->
+<div id="poeme-overlay" onclick="fermerPoeme()">
+<div id="poeme-modal" onclick="event.stopPropagation()">
+<button id="poeme-close" onclick="fermerPoeme()">✕</button>
+<div id="poeme-texte">
+<p>Anne-Laure, ma maman si douce,</p>
+<p>Dans tes bras, jamais je ne me sens seul,</p>
+<p>Tu m'as offert le monde, ville par ville,</p>
+<p>Des souvenirs gravés pour toujours en moi.</p>
+<br>
+<p>À seize ans, je réalise ta valeur,</p>
+<p>Chaque sacrifice, chaque nuit sans sommeil,</p>
+<p>Tu as bâti pour moi un avenir meilleur,</p>
+<p>Maman, tu es mon plus beau soleil.</p>
+<br>
+<p>Merci pour les routes et les horizons,</p>
+<p>Pour les rires partagés sous d'autres cieux,</p>
+<p>Merci d'être là dans chaque saison,</p>
+<p>Je t'aime Maman, plus que tous les mots.</p>
+</div>
+</div>
+</div>
+
+<script>
+function ouvrirPoeme() {
+document.getElementById("poeme-overlay").classList.add("actif");
+}
+function fermerPoeme() {
+document.getElementById("poeme-overlay").classList.remove("actif");
+}
+</script>
+
+</body>
+</html>
+
