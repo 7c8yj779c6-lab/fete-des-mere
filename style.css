@@ -1,0 +1,153 @@
+/* ===== BASE ===== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #fff5f7;
+font-family: 'Lato', sans-serif;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* ===== PAGE PRINCIPALE ===== */
+#page-principale {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+width: 100%;
+}
+
+#contenu-principal {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 20px;
+text-align: center;
+padding: 40px;
+}
+
+/* ===== IMAGE ROSE ===== */
+#rose-img {
+width: 320px;
+max-width: 80vw;
+animation: flotter 3s ease-in-out infinite;
+}
+
+@keyframes flotter {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+
+/* ===== TITRE ===== */
+#titre {
+font-family: 'Great Vibes', cursive;
+font-size: clamp(40px, 7vw, 80px);
+color: #d4688a;
+text-shadow: 1px 1px 8px rgba(212, 104, 138, 0.3);
+animation: apparaitre 1.5s ease forwards;
+opacity: 0;
+}
+
+@keyframes apparaitre {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BOUTON LIRE LA SUITE ===== */
+#btn-lire {
+background: linear-gradient(135deg, #f4a0b5, #e8728f);
+color: white;
+border: none;
+padding: 14px 32px;
+border-radius: 50px;
+font-family: 'Lato', sans-serif;
+font-size: 16px;
+font-weight: 300;
+letter-spacing: 1px;
+cursor: pointer;
+animation: vague 2s ease-in-out infinite;
+box-shadow: 0 4px 20px rgba(232, 114, 143, 0.4);
+transition: transform 0.2s;
+}
+
+#btn-lire:hover {
+transform: scale(1.05);
+}
+
+@keyframes vague {
+0% { box-shadow: 0 4px 20px rgba(232,114,143,0.4); }
+50% { box-shadow: 0 4px 35px rgba(232,114,143,0.75); }
+100% { box-shadow: 0 4px 20px rgba(232,114,143,0.4); }
+}
+
+/* ===== FENÊTRE POÈME ===== */
+#poeme-overlay {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(255, 220, 230, 0.5);
+backdrop-filter: blur(4px);
+z-index: 1000;
+align-items: center;
+justify-content: center;
+}
+
+#poeme-overlay.actif {
+display: flex;
+}
+
+#poeme-modal {
+background: white;
+border: 2px solid #f4a0b5;
+border-radius: 20px;
+padding: 40px;
+width: 520px;
+max-width: 90vw;
+position: relative;
+box-shadow: 0 8px 40px rgba(212, 104, 138, 0.2);
+animation: entrer 0.4s ease forwards;
+}
+
+@keyframes entrer {
+from { opacity: 0; transform: scale(0.9); }
+to { opacity: 1; transform: scale(1); }
+}
+
+#poeme-close {
+position: absolute;
+top: 14px;
+right: 16px;
+background: transparent;
+border: 1px solid #f4a0b5;
+color: #d4688a;
+width: 26px;
+height: 26px;
+border-radius: 50%;
+cursor: pointer;
+font-size: 13px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s;
+}
+
+#poeme-close:hover {
+background: #fff0f4;
+}
+
+#poeme-texte {
+font-family: 'Great Vibes', cursive;
+font-size: clamp(20px, 3vw, 28px);
+color: #d4688a;
+line-height: 2;
+text-align: center;
+}
+
